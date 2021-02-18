@@ -86,7 +86,8 @@ TARGETS	= \
 	tapv1_bl \
 	smartap_pro_bl \
 	modalai_fc_v1_bl \
-	uvify_core_bl
+	uvify_core_bl \
+	weact_f401ce_bl
 
 all:	$(TARGETS) sizes
 
@@ -173,6 +174,9 @@ modalai_fc_v1_bl:$(MAKEFILE_LIST) $(LIBOPENCM3)
 
 uvify_core_bl:$(MAKEFILE_LIST) $(LIBOPENCM3)
 	${MAKE} ${MKFLAGS} -f  Makefile.f4 TARGET_HW=UVIFY_CORE LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
+
+weact_f401ce_bl:$(MAKEFILE_LIST) $(LIBOPENCM3)
+	${MAKE} ${MKFLAGS} -f Makefile.f4 TARGET_HW=WEACT_F401CE LINKER_FILE=stm32f4.ld TARGET_FILE_NAME=$@
 
 # Default bootloader delay is *very* short, just long enough to catch
 # the board for recovery but not so long as to make restarting after a

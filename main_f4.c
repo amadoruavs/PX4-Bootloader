@@ -172,7 +172,11 @@ static void board_init(void);
 static const struct rcc_clock_scale clock_setup = {
 	.pllm = OSC_FREQ,
 	.plln = 336,
+#if defined(STM32F401) || defined(STM32F411)
+	.pllp = 4,
+#else
 	.pllp = 2,
+#endif
 	.pllq = 7,
 #if defined(STM32F446) || defined(STM32F469)
 	.pllr = 2,

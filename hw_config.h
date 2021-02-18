@@ -807,6 +807,38 @@
 # define USBMFGSTRING                   "Vertile"
 
 /****************************************************************************
+ * TARGET_HW_WEACT_F401CE
+ ****************************************************************************/
+
+#elif  defined(TARGET_HW_WEACT_F401CE)
+
+# define APP_LOAD_ADDRESS               0x08008000
+# define BOOTLOADER_DELAY               5000
+# define INTERFACE_USB                  1
+# define INTERFACE_USART                0
+# define USBDEVICESTRING                "Black Pill F401CE"
+# define USBPRODUCTID                   0x0016
+
+# define BOARD_TYPE                     150
+# define BOARD_FLASH_SECTORS            8
+# define BOARD_FLASH_SIZE               (512 * 1024)
+# define BOARD_FIRST_FLASH_SECTOR_TO_ERASE    1
+# define APP_RESERVATION_SIZE           (1 * 16 * 1024) /* 1 16 Kib Sectors */
+
+# define OSC_FREQ                       25
+
+# define BOARD_PIN_LED_ACTIVITY         GPIO13
+# define BOARD_PIN_LED_BOOTLOADER       GPIO13
+# define BOARD_PORT_LEDS                GPIOC
+# define BOARD_CLOCK_LEDS               RCC_AHB1ENR_IOPCEN
+# define BOARD_LED_ON                   gpio_clear
+# define BOARD_LED_OFF                  gpio_set
+
+# define BOARD_USB_VBUS_SENSE_DISABLED
+
+# define USBMFGSTRING                   "WeAct"
+
+/****************************************************************************
  * TARGET_HW_KAKUTEF7
  ****************************************************************************/
 

@@ -348,6 +348,12 @@ usb_cinit(void *pconfig)
 			     usbd_control_buffer, sizeof(usbd_control_buffer));
 #endif
 
+// https://github.com/libopencm3/libopencm3/issues/1119#issuecomment-549071405
+// Fix for otgfs_usb_driver setting VBUSBSEN regardless of what board it is.
+#if defined(STM32F401) || defined(STM32F411)
+	OTG_FS_GCCFG |= OTG_GCCFG_NOVBUSSENS;
+#endif
+
 	usbd_register_set_config_callback(usbd_dev, cdcacm_set_config);
 
 #if defined(STM32F4)

@@ -33,7 +33,8 @@ pipeline {
                      "px4fmuv5_bl",
                      "px4io_bl",
                      "smartap_pro_bl",
-                     "modalai_fc_v1_bl"
+                     "modalai_fc_v1_bl",
+                     "weact_f401ce_bl"
             ],
             image: docker_images.nuttx,
             archive: true
